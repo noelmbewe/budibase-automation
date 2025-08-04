@@ -1,0 +1,75 @@
+{
+  "type": "automation",
+  "metadata": {},
+  "schema": {
+    "name": "Send Custom Email",
+    "tagline": "Send emails using Gmail SMTP",
+    "description": "Send custom emails through your Gmail SMTP configuration",
+    "icon": "Email",
+    "type": "action",
+    "stepId": "SEND_CUSTOM_EMAIL",
+    "schema": {
+      "inputs": {
+        "properties": {
+          "recipientEmail": {
+            "type": "string",
+            "title": "Recipient Email",
+            "description": "Email address to send to"
+          },
+          "recipientName": {
+            "type": "string",
+            "title": "Recipient Name",
+            "description": "Name of the recipient (optional)"
+          },
+          "emailSubject": {
+            "type": "string",
+            "title": "Email Subject",
+            "description": "Subject line of the email"
+          },
+          "emailBody": {
+            "type": "string",
+            "title": "Email Body",
+            "description": "HTML or plain text content of the email"
+          },
+          "isHtml": {
+            "type": "boolean",
+            "title": "HTML Email",
+            "description": "Whether the email body contains HTML"
+          },
+          "ccEmails": {
+            "type": "string",
+            "title": "CC Emails",
+            "description": "Comma-separated list of CC email addresses"
+          },
+          "bccEmails": {
+            "type": "string",
+            "title": "BCC Emails",
+            "description": "Comma-separated list of BCC email addresses"
+          }
+        },
+        "required": ["recipientEmail", "emailSubject", "emailBody"]
+      },
+      "outputs": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the email was sent successfully"
+          },
+          "messageId": {
+            "type": "string",
+            "description": "Email message ID from the server"
+          },
+          "error": {
+            "type": "string",
+            "description": "Error message if sending failed"
+          },
+          "recipientEmail": {
+            "type": "string",
+            "description": "The email address that was sent to"
+          }
+        },
+        "required": ["success"]
+      }
+    }
+  }
+}
