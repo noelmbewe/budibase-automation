@@ -113,4 +113,5 @@ export default {
     hash(),
     bundle(),
   ],
+  external: ["nodemailer"]
 }

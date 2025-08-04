@@ -1,8 +1,5 @@
-import automation from "./automation"
-// @ts-ignore
-import json from "../schema.json"
+// Import the automation
+import emailAutomation from './automation'
 
-export default {
-  action: automation,
-  schema: json,
-}
+// Export only as default to avoid Rollup export conflicts
+export default emailAutomation

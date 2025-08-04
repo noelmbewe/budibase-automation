@@ -50,7 +50,8 @@ export const definition = {
       isHtml: {
         type: "boolean",
         title: "HTML Email",
-        description: "Whether the email body contains HTML"
+        description: "Whether the email body contains HTML",
+        default: true
       },
       ccEmails: {
         type: "string",
@@ -100,8 +101,11 @@ const isValidEmail = (email: string): boolean => {
 }
 
 // Main automation function
-export async function run({ inputs }: { inputs: any }): Promise<any> {
+export async function run(params: { inputs: any }): Promise<any> {
+  const { inputs } = params
   try {
+    console.log('Email automation inputs:', inputs)
+    
     const {
       recipientEmail,
       recipientName,
@@ -188,10 +192,8 @@ export async function run({ inputs }: { inputs: any }): Promise<any> {
   }
 }
 
-
-const automation = {
+// Default export for the automation - Budibase expects this structure
+export default {
   definition,
   run
 }
-
-export default automation

@@ -2,11 +2,12 @@
   "name": "budibase-automation",
   "version": "1.0.0",
   "description": "Emails",
-  "main": "src/index.ts",
+  "main": "dist/plugin.min.js",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -cw"
+    "watch": "rollup -cw",
+    "dev": "rollup -c -w"
   },
   "dependencies": {
     "@budibase/types": "^2.0.13",
@@ -21,8 +22,10 @@
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.4",
+    "@types/node": "^20.0.0",
     "@types/node-fetch": "^2.6.2",
     "@types/nodemailer": "^6.4.17",
+    "@types/tar": "^6.1.0",
     "babel-jest": "^29.0.3",
     "jest": "^29.0.3",
     "npm-run-all": "^4.1.5",
@@ -35,5 +38,8 @@
     "ts-node": "^10.9.1",
     "tslib": "^2.4.0",
     "typescript": "^4.8.2"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
