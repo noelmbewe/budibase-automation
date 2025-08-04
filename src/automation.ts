@@ -188,7 +188,7 @@ export async function run({ inputs }: { inputs: any }): Promise<any> {
   }
 }
 
-// Default export for the automation
+
 const automation = {
   definition,
   run
